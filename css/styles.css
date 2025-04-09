@@ -1,0 +1,264 @@
+html,
+body {
+  background-color: #fff;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+
+  font-family: "consolas", monospace;
+  font-weight: 600;
+  color: #666;
+  font-size: 13px;
+
+  user-select: none;
+}
+
+#title {
+  position: absolute;
+  top: 6px;
+  left: 103px;
+}
+
+#info {
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
+}
+
+.infoline:hover .tooltip {
+  visibility: visible;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  background-color: #999;
+  padding: 2px 5px;
+
+  margin-top: -22px;
+  margin-left: -57px;
+  pointer-events: none;
+
+  background-color: #fff;
+  box-shadow: 0 0 0 1.3px #bbb;
+  border-radius: 2px;
+}
+
+span.rect {
+  display: inline-block;
+  background-color: #555;
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+  margin-right: 1px;
+}
+
+div.arr {
+  display: inline-block;
+  margin: 0 0 3px 2px;
+  height: 2px;
+  width: 20px;
+  background-color: #999;
+}
+
+/* DAT.gui */
+.dg.main.a {
+  margin-right: 6px !important;
+  opacity: 0.84;
+}
+.close-button {
+  border-radius: 0 0 3px 3px;
+}
+
+/* stats.min */
+#container div canvas {
+  transform-origin: 0 0;
+  transform: scale(1.1);
+  margin: 0 6px;
+  border-radius: 0 0 3px 3px;
+}
+
+#time {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #999;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+#alive {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #999;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+#alert {
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  width: 100vw;
+}
+
+#links {
+  position: absolute;
+  bottom: 186px;
+  left: 8px;
+}
+
+#links a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: 3px 6px 3px 4px;
+  margin: -1px 1px 3px -3px;
+  border-radius: 3px;
+  width: min-content;
+  white-space: nowrap;
+}
+
+#links img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+#links a:hover {
+  background-color: rgb(238, 242, 255);
+  box-shadow: 0 0 0 1.3px rgb(80, 115, 231);
+  color: rgb(38, 72, 184);
+}
+
+#links #submission {
+  margin-top: 11px;
+  font-size: 11px;
+  color: #777;
+  font-weight: 500;
+}
+
+#links #submission:hover {
+  background-color: #fbfbfb;
+  box-shadow: 0 0 0 1.3px #bbb;
+}
+
+#loaderbg {
+  background: #fff;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#fullscreen {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #fff;
+  border: 1.3px solid #bbb;
+  font-size: 13px;
+  border-radius: 3px;
+  padding: 3px 7px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 812px) {
+  #title,
+  #info,
+  #time,
+  #submission {
+    display: none !important;
+  }
+  #links {
+    bottom: 8px;
+  }
+  body {
+    font-size: 10px;
+  }
+  .dg {
+    font-size: 10px;
+  }
+  #container div canvas {
+    transform: scale(1);
+  }
+  #fullscreen {
+    display: initial;
+  }
+}
+
+/* Loading icon from: https://loading.io/css/ */
+#loader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 8px;
+  padding: 20px;
+}
+#loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #444;
+  border-radius: 50%;
+  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #444 transparent transparent transparent;
+}
+#loader div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+#loader div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+#loader div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
